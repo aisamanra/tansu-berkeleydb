@@ -1,4 +1,5 @@
-module Database.Tansu.Backend.BerkeleyDb where
+module Database.Tansu.Backend.BerkeleyDb
+         (withBerkeleyDb) where
 
 import Database.Berkeley.Db
 import Data.ByteString (ByteString)
@@ -14,6 +15,8 @@ bdbGet :: Db -> ByteString -> IO (Maybe ByteString)
 bdbGet db key =
   db_get [] db Nothing key
 
+-- | Open or create a database at the supplied path
+--   using the BerkeleyDB library.
 withBerkeleyDb :: FilePath -> (TansuDb -> IO a) -> IO a
 withBerkeleyDb path comp = do
   createDirectoryIfMissing True path
