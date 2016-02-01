@@ -38,7 +38,7 @@ main = withBerkeleyDb "sample.db" $ \ db -> do
   putStrLn $ "Blake's age is " ++ show age
 ~~~
 
-## Usage
+## Use
 
 Please see the corresponding section of the
-[`tansu` library page](http://github.com/aisamanra/tansu#usage).
+[`tansu` library page](http://github.com/aisamanra/tansu#use).
